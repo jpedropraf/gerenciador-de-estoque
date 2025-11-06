@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Management Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#359EFF", "background-light": "#f5f7f8", "background-dark": "#0f1923", "content-light": "#ffffff", "content-dark": "#18232f", "text-light": "#0f172a", "text-dark": "#ffffff", "subtext-light": "#64748b", "subtext-dark": "#94a3b8", "border-light": "#e2e8f0", "border-dark": "#334155"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="flex h-screen">
+<aside class="w-64 bg-content-light dark:bg-content-dark border-r border-border-light dark:border-border-dark flex flex-col">
+<div class="flex items-center gap-2 p-6">
+<svg class="text-primary" fill="none" height="32" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2L2 7V17L12 22L22 17V7L12 2ZM12 4.4L19.6 9L12 13.6L4.4 9L12 4.4ZM3 8.5L11 13.5V20L3 15V8.5ZM21 8.5V15L13 20V13.5L21 8.5Z" fill="currentColor"></path>
+</svg>
+<h1 class="text-xl font-bold">Product.io</h1>
+</div>
+<nav class="flex-1 px-4 py-2">
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg bg-primary/10 text-primary font-semibold" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 text-subtext-light dark:text-subtext-dark hover:text-primary" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                    Products
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 text-subtext-light dark:text-subtext-dark hover:text-primary" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+                    Orders
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-primary/10 dark:hover:bg-primary/20 text-subtext-light dark:text-subtext-dark hover:text-primary" href="#">
+<span class="material-symbols-outlined">group</span>
+                    Customers
+                </a>
+</nav>
+<div class="p-4 border-t border-border-light dark:border-border-dark">
+<div class="flex items-center gap-3">
+<img alt="User avatar" class="size-10 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVqs6EyPjRiYrW2mA_TkKb2aGrtyHYzGGb49KOuwBiSH80lcWXtgYnCsWQshNBNfiu58C-W3N1-ajzkZ8g-m50HPCDiQdkXrGAJP-2EGJWyM5n4CE9bEr-vPBFq0v5d5aSyeeGeKvQeKOEd7cZ_CqUsilQOa-p1BkpA2NCvxLP9-9_wDhYVltdCmuisnZ_bbR2yiqe-l7UN9Sri8sFr-dXo0IpjZySalJfAjKXjFiYAXMuZytlcHEIbZX_KV4S1UcFXi0noU4heVc"/>
+<div>
+<p class="font-semibold">Alex Turner</p>
+<p class="text-sm text-subtext-light dark:text-subtext-dark">alex.turner@example.com</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col overflow-hidden">
+<header class="flex items-center justify-between p-6 border-b border-border-light dark:border-border-dark bg-content-light dark:bg-content-dark">
+<h2 class="text-2xl font-bold">Products</h2>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">
+<span class="material-symbols-outlined text-subtext-light dark:text-subtext-dark">notifications</span>
+</button>
+<button class="flex items-center gap-2 bg-primary text-white font-medium px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined">add</span>
+                        Add Product
+                    </button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-6">
+<div class="bg-content-light dark:bg-content-dark rounded-lg p-6 shadow-sm">
+<div class="flex flex-col md:flex-row gap-4 mb-4">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-subtext-light dark:text-subtext-dark">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark focus:ring-2 focus:ring-primary focus:border-primary outline-none transition" placeholder="Search products by name..." type="text"/>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg border border-border-light dark:border-border-dark hover:border-primary hover:text-primary bg-content-light dark:bg-content-dark">
+<span class="material-symbols-outlined">filter_list</span>
+<span>Advanced Filters</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="border-b-2 border-border-light dark:border-border-dark">
+<tr>
+<th class="p-4"><div class="flex items-center gap-2 cursor-pointer">
+<span class="font-semibold">Name</span>
+<span class="material-symbols-outlined text-sm text-subtext-light dark:text-subtext-dark">unfold_more</span>
+</div></th>
+<th class="p-4"><div class="flex items-center gap-2 cursor-pointer">
+<span class="font-semibold">Brand</span>
+<span class="material-symbols-outlined text-sm text-subtext-light dark:text-subtext-dark">unfold_more</span>
+</div></th>
+<th class="p-4"><div class="flex items-center gap-2 cursor-pointer">
+<span class="font-semibold">Category</span>
+<span class="material-symbols-outlined text-sm text-subtext-light dark:text-subtext-dark">unfold_more</span>
+</div></th>
+<th class="p-4"><div class="flex items-center gap-2 cursor-pointer whitespace-nowrap">
+<span class="font-semibold">Unit Price</span>
+<span class="material-symbols-outlined text-sm text-subtext-light dark:text-subtext-dark">unfold_more</span>
+</div></th>
+<th class="p-4"><div class="flex items-center gap-2 cursor-pointer">
+<span class="font-semibold">Stock</span>
+<span class="material-symbols-outlined text-sm text-subtext-light dark:text-subtext-dark">unfold_more</span>
+</div></th>
+<th class="p-4"><div class="flex items-center gap-2 cursor-pointer">
+<span class="font-semibold">Added</span>
+<span class="material-symbols-outlined text-sm text-subtext-light dark:text-subtext-dark">unfold_more</span>
+</div></th>
+<th class="p-4"><div class="flex items-center gap-2 cursor-pointer">
+<span class="font-semibold">Updated</span>
+<span class="material-symbols-outlined text-sm text-subtext-light dark:text-subtext-dark">unfold_more</span>
+</div></th>
+<th class="p-4 text-right font-semibold">Actions</th>
+</tr>
+<tr class="bg-background-light dark:bg-background-dark/50">
+<td class="p-2"><input class="w-full px-3 py-1.5 rounded-md bg-content-light dark:bg-content-dark border border-border-light dark:border-border-dark focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Filter name" type="text"/></td>
+<td class="p-2"><input class="w-full px-3 py-1.5 rounded-md bg-content-light dark:bg-content-dark border border-border-light dark:border-border-dark focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Filter brand" type="text"/></td>
+<td class="p-2"><input class="w-full px-3 py-1.5 rounded-md bg-content-light dark:bg-content-dark border border-border-light dark:border-border-dark focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Filter category" type="text"/></td>
+<td class="p-2"><div class="flex items-center gap-1"><input class="w-full px-2 py-1.5 rounded-md bg-content-light dark:bg-content-dark border border-border-light dark:border-border-dark focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Min" type="number"/><input class="w-full px-2 py-1.5 rounded-md bg-content-light dark:bg-content-dark border border-border-light dark:border-border-dark focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Max" type="number"/></div></td>
+<td class="p-2"><div class="flex items-center gap-1"><input class="w-full px-2 py-1.5 rounded-md bg-content-light dark:bg-content-dark border border-border-light dark:border-border-dark focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Min" type="number"/><input class="w-full px-2 py-1.5 rounded-md bg-content-light dark:bg-content-dark border border-border-light dark:border-border-dark focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Max" type="number"/></div></td>
+<td class="p-2"><div class="flex items-center gap-1"><input class="w-full px-2 py-1.5 rounded-md bg-content-light dark:bg-content-dark border border-border-light dark:border-border-dark focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Start" type="date"/><input class="w-full px-2 py-1.5 rounded-md bg-content-light dark:bg-content-dark border border-border-light dark:border-border-dark focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="End" type="date"/></div></td>
+<td class="p-2"><div class="flex items-center gap-1"><input class="w-full px-2 py-1.5 rounded-md bg-content-light dark:bg-content-dark border border-border-light dark:border-border-dark focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="Start" type="date"/><input class="w-full px-2 py-1.5 rounded-md bg-content-light dark:bg-content-dark border border-border-light dark:border-border-dark focus:ring-1 focus:ring-primary focus:border-primary outline-none text-sm" placeholder="End" type="date"/></div></td>
+<td class="p-2"></td>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-background-dark/50">
+<td class="p-4 font-medium">EcoBottle</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">AquaPure</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">Beverages</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">$15.00</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">100</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">2023-01-15</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">2023-03-20</td>
+<td class="p-4 text-right"><button class="text-primary hover:underline">Edit</button></td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-background-dark/50">
+<td class="p-4 font-medium">Organic Oats</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">Nature's Best</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">Grains</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">$5.00</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">200</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">2023-02-10</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">2023-04-15</td>
+<td class="p-4 text-right"><button class="text-primary hover:underline">Edit</button></td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-background-dark/50">
+<td class="p-4 font-medium">Silk Scarf</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">Elegance</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">Accessories</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">$30.00</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">50</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">2023-03-05</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">2023-05-10</td>
+<td class="p-4 text-right"><button class="text-primary hover:underline">Edit</button></td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-background-dark/50">
+<td class="p-4 font-medium">Leather Wallet</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">Craftsman</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">Accessories</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">$45.00</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">30</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">2023-04-01</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">2023-06-05</td>
+<td class="p-4 text-right"><button class="text-primary hover:underline">Edit</button></td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-background-dark/50">
+<td class="p-4 font-medium">Cotton T-Shirt</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">ComfortWear</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">Apparel</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">$20.00</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">150</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">2023-05-01</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">2023-07-05</td>
+<td class="p-4 text-right"><button class="text-primary hover:underline">Edit</button></td>
+</tr>
+<tr class="border-b border-border-light dark:border-border-dark hover:bg-background-light dark:hover:bg-background-dark/50">
+<td class="p-4 font-medium">Wooden Desk</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">SolidCraft</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">Furniture</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">$250.00</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">20</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">2023-06-01</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">2023-08-05</td>
+<td class="p-4 text-right"><button class="text-primary hover:underline">Edit</button></td>
+</tr>
+<tr class="hover:bg-background-light dark:hover:bg-background-dark/50">
+<td class="p-4 font-medium">Ceramic Mug</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">Artisan</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">Home Goods</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">$12.00</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">80</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">2023-07-01</td>
+<td class="p-4 text-subtext-light dark:text-subtext-dark">2023-09-05</td>
+<td class="p-4 text-right"><button class="text-primary hover:underline">Edit</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

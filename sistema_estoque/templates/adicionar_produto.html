@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerenciar Produtos</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: { primary: "#359EFF", "background-light": "#f5f7f8", "background-dark": "#0f1923" },
+          fontFamily: { display: "Inter" },
+        },
+      },
+    };
+  </script>
+  <style>
+    .form-select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right 0.5rem center;
+      background-repeat: no-repeat;
+      background-size: 1.5em 1.5em;
+      padding-right: 2.5rem;
+    }
+  </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200">
+  <div class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-background-light dark:bg-background-dark/50 backdrop-blur-sm sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center gap-4">
+            <div class="text-primary">
+              <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-12h2v2h-2v-2zm0 4h2v6h-2v-6z"></path>
+              </svg>
+            </div>
+            <h1 class="text-xl font-bold text-slate-900 dark:text-white">Gerenciar Produtos</h1>
+          </div>
+
+          <nav class="hidden md:flex items-center gap-6">
+            <!-- 🔗 ROTAS DO DJANGO -->
+            <a href="{% url 'gerenciar_produtos:listar_produto' %}" class="text-sm font-medium text-primary hover:underline">Listar Produtos</a>
+            <a href="{% url 'gerenciar_produtos:criar_produto' %}" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary">Criar Produto</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">Adicionar Produto</h2>
+          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Preencha os campos abaixo para adicionar um novo produto.</p>
+        </div>
+
+        <!-- 🔗 FORM DJANGO -->
+        <form method="POST" enctype="multipart/form-data" action="{% url 'gerenciar_produtos:criar_produto' %}" class="space-y-6">
+          {% csrf_token %}
+          {{ form.non_field_errors }}
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium" for="id_nome">Nome do Produto</label>
+              {{ form.nome }}
+              {{ form.nome.errors }}
+            </div>
+            <div>
+              <label class="block text-sm font-medium" for="id_marca">Marca</label>
+              {{ form.marca }}
+              {{ form.marca.errors }}
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium" for="id_categoria">Categoria</label>
+            {{ form.categoria }}
+            {{ form.categoria.errors }}
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium" for="id_descricao">Descrição</label>
+            {{ form.descricao }}
+            {{ form.descricao.errors }}
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium" for="id_preco">Preço</label>
+              {{ form.preco }}
+              {{ form.preco.errors }}
+            </div>
+            <div>
+              <label class="block text-sm font-medium" for="id_quantidade_estoque">Quantidade em Estoque</label>
+              {{ form.quantidade_estoque }}
+              {{ form.quantidade_estoque.errors }}
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium" for="id_peso_unitario">Peso Unitário (kg)</label>
+              {{ form.peso_unitario }}
+              {{ form.peso_unitario.errors }}
+            </div>
+            <div>
+              <label class="block text-sm font-medium" for="id_peso_total">Peso Total (kg)</label>
+              {{ form.peso_total }}
+              {{ form.peso_total.errors }}
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium" for="id_imagem">Imagem do Produto</label>
+            {{ form.imagem }}
+            {{ form.imagem.errors }}
+          </div>
+
+          <div class="pt-4 flex justify-end gap-3">
+            <!-- 🔗 BOTÕES COM ROTAS -->
+            <a href="{% url 'gerenciar_produtos:listar_produto' %}" class="px-4 py-2 text-sm font-medium rounded-lg bg-slate-200 text-slate-800 hover:bg-slate-300 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600">Cancelar</a>
+
+            <button type="submit" class="inline-flex justify-center py-2 px-4 text-sm font-medium rounded-lg text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+              Salvar Produto
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

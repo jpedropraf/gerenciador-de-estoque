@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Manager - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex min-h-screen flex-col">
+<header class="flex items-center justify-between border-b border-gray-200/50 dark:border-gray-700/50 px-4 py-3 sm:px-6 lg:px-8">
+<div class="flex items-center gap-3">
+<div class="text-primary h-8 w-8">
+<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.5 2.5C14.74 2.5 12.5 4.74 12.5 7.5S14.74 12.5 17.5 12.5 22.5 10.26 22.5 7.5 20.26 2.5 17.5 2.5ZM17.5 10C16.12 10 15 8.88 15 7.5S16.12 5 17.5 5 20 6.12 20 7.5 18.88 10 17.5 10Z"></path>
+<path d="M19.34 14.66C18.42 14.24 17.36 14 16.25 14H8.75C5.04 14 2 17.04 2 20.75V22.5H16.25C17.36 22.5 18.42 22.26 19.34 21.84L21.5 24L24 21.5L19.34 14.66ZM13.75 20H4.5V20.75C4.5 18.4 6.4 16.5 8.75 16.5H13.75V20Z"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold text-gray-900 dark:text-white">Product Manager</h1>
+</div>
+</header>
+<main class="flex flex-1 items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+<div class="w-full max-w-md space-y-8">
+<div>
+<h2 class="text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Welcome back</h2>
+</div>
+<form action="#" class="space-y-6" method="POST">
+<div class="space-y-4 rounded-lg bg-background-light dark:bg-background-dark p-2">
+<div>
+<label class="sr-only" for="username">Username or Email</label>
+<input class="relative block w-full appearance-none rounded-lg border border-transparent bg-primary/10 px-3 py-4 text-gray-900 placeholder-gray-500/80 focus:z-10 focus:border-primary focus:outline-none focus:ring-primary dark:bg-primary/20 dark:text-white dark:placeholder-gray-400/80 sm:text-sm" id="username" name="username" placeholder="Username or Email" required="" type="text"/>
+</div>
+<div>
+<label class="sr-only" for="password">Password</label>
+<input class="relative block w-full appearance-none rounded-lg border border-transparent bg-primary/10 px-3 py-4 text-gray-900 placeholder-gray-500/80 focus:z-10 focus:border-primary focus:outline-none focus:ring-primary dark:bg-primary/20 dark:text-white dark:placeholder-gray-400/80 sm:text-sm" id="password" name="password" placeholder="Password" required="" type="password"/>
+</div>
+</div>
+<div class="flex items-center justify-end">
+<div class="text-sm">
+<a class="font-medium text-primary hover:text-primary/80" href="#">Forgot password?</a>
+</div>
+</div>
+<div>
+<button class="group relative flex w-full justify-center rounded-lg border border-transparent bg-primary px-4 py-3 text-sm font-bold text-white hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark" type="submit">
+                Sign In
+              </button>
+</div>
+<p class="text-center text-sm text-gray-600 dark:text-gray-400">
+              Don't have an account?
+              <a class="font-medium text-primary hover:text-primary/80" href="#">Sign up</a>
+</p>
+</form>
+</div>
+</main>
+</div>
+</body></html>
