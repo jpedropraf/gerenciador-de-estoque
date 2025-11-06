@@ -1,2 +1,0 @@
-usario = admin
-senha = Sql$12w2
